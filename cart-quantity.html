@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+  <title>Cart Quantity</title>
+</head>
+<body>
+  <h1> Cart Quantity</h1>
+  <button onclick="
+  console.log(`Cart Quantity :${cartCount}`)">Show Quantity</button>
+  <button onclick="
+  cartCount ++;
+  console.log(`Cart Quantity :${cartCount}`)">Add to cart</button>
+  <button  onclick="
+  cartCount += 2;
+  console.log(`Cart Quantity :${cartCount}`)">+2</button>
+  <button onclick="
+  cartCount += 3;
+  console.log(`Cart Quantity :${cartCount}`)">+3</button>
+  <button onclick="
+  cartCount = 0;
+  console.log('Cart was reset');
+  console.log(`Cart Quantity :${cartCount}`)">Reset Cart</button>
+  <script>
+    let cartCount  = 0;    //camelCase is the naming conventions in javascript    kebab-case for file name   
+
+  </script>
+</body>
+
+</html>
+
+
+
