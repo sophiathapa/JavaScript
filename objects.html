@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Objects</title>
+  </head>
+  <body>
+    <script>
+      const product = {
+        name: "Socks",
+        price: 120,
+      };
+
+      console.log(product);
+      console.log(product.name);
+      console.log(product.price);
+
+      product.name = "T-shirt";
+      console.log(product);
+
+      product.quantity = 2; //add new property
+      console.log(product);
+
+      delete product.name; // delete property and value
+      console.log(product);
+
+      const product2 = {
+        name: "shirt",
+        "delivery-time": "1 day",
+
+        rating: {
+          stars: 4.4,
+          count: 87,
+        },
+
+        fun: function fucntion1() {
+          console.log("function inside object"); // function inside the object = method
+        },
+      };
+
+      console.log(product2);
+      console.log(product2.name); //dot notation
+
+      console.log(product2["name"]); // bracket notation
+      console.log(product2["delivery-time"]);
+
+      console.log(product2.rating.stars);
+
+      product2.fun();
+
+      console.log(typeof console.log); // log is a function inside a object console
+
+      const jsonString = JSON.stringify(product2); // change into JSON
+      console.log(jsonString);
+
+      console.log(JSON.parse(jsonString)); //change json into js
+
+      console.log("hello".length); //Auto-Boxing
+      console.log("hello".toUpperCase());
+
+      //Object are references
+
+      const object1 = {
+        message: "hello",
+      };
+
+      const object2 = object1; //copy by reference : we are not copying the message but only the reference to that message
+
+      object1.message = "Good job!";
+      console.log(object1);
+      console.log(object2);
+
+      const object3 = {
+        message: "Good job!",
+      };
+
+      console.log(object3 === object1); //false     comparing the references only
+      console.log(object2 === object1); //true
+
+      const object4 = {
+        message: "Good job!",
+        price: 123,
+      };
+
+      // const message = object4.message;
+      const { message, price } = object4; // destructin  same as above
+      console.log(message);
+      console.log(price);
+
+      const object5 = {
+        // message :message
+        //or    shorthand property
+        message,
+
+        // method : function function1(){
+        //   console.log('method');
+        // }
+        // or shorthand method
+        method() {
+          console.log("method");
+        },
+      };
+
+      console.log(object5); //{message: 'Good job!'}
+      object5.method();
+    </script>
+  </body>
+</html>
+
+<!-- built in objects 
+  > JSON
+  > local storage -->
