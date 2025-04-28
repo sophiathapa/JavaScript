@@ -1,0 +1,42 @@
+body {
+  font-style: Arial;
+  font-size: 20px;
+}
+
+.todo-grid,
+.input-grid {
+  display: grid;
+  grid-template-columns: 200px 150px 100px;
+  column-gap: 10px;
+  row-gap: 10px;
+  align-items: center;
+}
+
+.input-grid {
+  margin-bottom: 10px;
+  align-items: stretch;
+}
+
+.input-icon,
+.due-date-button {
+  font-size: 15px;
+  padding: 6px;
+}
+
+.add-button {
+  background-color: green;
+  color: white;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.delete-button {
+  background-color: rgb(145, 16, 16);
+  color: white;
+  font-size: 15px;
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
