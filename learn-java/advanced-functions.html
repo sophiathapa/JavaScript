@@ -4,72 +4,136 @@
     <title>Advanced Functons</title>
   </head>
   <body>
+    <button class="js-button">Click</button>
+
     <script>
-      function greeting() {
-        console.log("hello");
-      }
-      greeting();
+      // const buttonElement = document.querySelector(".js-button");
 
-      //function as values
-      const num = 2;
-      const function1 = function () {
-        //Anonymous function  = no name needed
-        console.log("hello2");
-      };
-      function1();
+      // const eventListener = () => {
+      //   console.log("click");
+      // };
 
-      const object = {
-        num: 2,
-        fun: function () {
-          console.log("hello3");
-        },
-      };
+      // buttonElement.addEventListener("click", eventListener);
 
-      object.fun();
+      // buttonElement.removeEventListener("click", eventListener);
 
-      function display(param) {
-        console.log(param);
-      }
+      // buttonElement.addEventListener("click", () => {
+      //   console.log("click2");
+      // });
 
-      display(2);
+      // function greeting() {
+      //   console.log("hello");
+      // }
+      // greeting();
 
-      function run(param) {
-        param();
-      }
+      // //function as values
+      // const num = 2;
+      // const function1 = function () {
+      //   //Anonymous function  = no name needed
+      //   console.log("hello2");
+      // };
+      // function1();
 
-      run(function () {
-        console.log("hello4"); // the function we pass are called call back function
-      });
+      // const object = {
+      //   num: 2,
+      //   fun: function () {
+      //     console.log("hello3");
+      //   },
+      // };
 
-      //SetTimeOut (function, how long to wait before running the function (milisecond))
+      // object.fun();
 
-      //Asynchronous code
-      setTimeout(function () {
-        console.log("timeOut");
-        console.log("timeOut2");
-      }, 3000); //waits for 3 sec before running the function
+      // function display(param) {
+      //   console.log(param);
+      // }
 
-      console.log("next line");
+      // display(2);
 
-      setInterval(function () {
-        //run function every 3 sec in future
-        console.log("interval");
-      }, 3000);
+      // function run(param) {
+      //   param();
+      // }
 
-      console.log("next line2");
+      // run(function () {
+      //   console.log("hello4"); // the function we pass are called call back function
+      // });
 
-      //Another way to loop through arrar
+      // //SetTimeOut (function, how long to wait before running the function (milisecond))
 
-      ["make dinner", "wash dishes", "watch youtube"].forEach(function (
-        value,
-        index
-      ) {
-        if (value === "wash dishes") {
-          return; //continue
-        }
-        console.log(value);
-        console.log(index);
-      });
+      // //Asynchronous code
+      // setTimeout(function () {
+      //   console.log("timeOut");
+      //   console.log("timeOut2");
+      // }, 3000); //waits for 3 sec before running the function
+
+      // console.log("next line");
+
+      // setInterval(function () {
+      //   //run function every 3 sec in future
+      //   console.log("interval");
+      // }, 3000);
+
+      // console.log("next line2");
+
+      // //Another way to loop through arrar
+
+      // ["make dinner", "wash dishes", "watch youtube"].forEach( (
+      //   value,
+      //   index
+      // ) => {
+      //   if (value === "wash dishes") {
+      //     return; //continue
+      //   }
+      //   console.log(value);
+      //   console.log(index);
+      // });
+
+      // const normalFunction = () =>{
+      //   console.log('hello');
+      // }
+
+      // const arrowFunction = (param) => {
+      //   console.log(param);
+      // }
+
+      // arrowFunction(2);
+
+      // const oneParam = param => {
+      //   console.log(param)
+      // }
+
+      // oneParam(3);
+
+      // const oneLine = () =>  2+3 ;
+
+      // console.log(oneLine());
+
+      // const object2 = {
+      //   method : () => {
+
+      //   },
+      //   method () {
+
+      //   }
+      // };
+
+      console.log(
+        [1, -3, 5].filter((value, index) => {
+          //   if(value >= 0)
+          //   return true;
+          // else
+          // return false;
+
+          return value >= 0; //[1,5]
+        })
+      );
+
+      console.log(
+        [1, 1, 3].map((value, index) => {
+          return value * 2;
+        })
+      );
+
+      console.log([1, 1, 3].map((value) => value * 2));
     </script>
   </body>
 </html>

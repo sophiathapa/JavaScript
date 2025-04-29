@@ -1,5 +1,3 @@
-// let computerMove = '';     //global variable
-
 const score = JSON.parse(localStorage.getItem("score")) || {
   wins: 0,
   losses: 0,
@@ -13,6 +11,29 @@ const score = JSON.parse(localStorage.getItem("score")) || {
 //     tie : 0
 //   };
 // }
+
+document.querySelector(".js-rock-button").addEventListener("click", () => {
+  playGame("rock");
+});
+
+document.querySelector(".js-paper-button").addEventListener("click", () => {
+  playGame("paper");
+});
+
+document.querySelector(".js-scissors-button").addEventListener("click", () => {
+  playGame("scissors");
+});
+
+document.body.addEventListener("keydown", (event) => {
+  console.log(event.key); // the key we pressed
+  if (event.key === "r") {
+    playGame("rock");
+  } else if (event.key === "p") {
+    playGame("paper");
+  } else if (event.key === "s") {
+    playGame("scissors");
+  }
+});
 
 updateScoreElement();
 
@@ -96,7 +117,7 @@ let intervalId;
 
 function autoPlay() {
   if (!isAutoPlaying) {
-    intervalId = setInterval(function () {
+    intervalId = setInterval(() => {
       const playerMove = pickComputerMove();
       playGame(playerMove);
     }, 1000);
