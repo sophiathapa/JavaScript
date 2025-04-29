@@ -1,9 +1,9 @@
 // let computerMove = '';     //global variable
 
 const score = JSON.parse(localStorage.getItem("score")) || {
-  win: 0,
+  wins: 0,
   losses: 0,
-  tie: 0,
+  ties: 0,
 };
 
 // if (!score){
@@ -62,11 +62,11 @@ function playGame(playerMove) {
   }
 
   if (result === "You won.") {
-    score.win += 1;
+    score.wins += 1;
   } else if (result === "You lose.") {
     score.losses += 1;
   } else if (result === "Tie.") {
-    score.ties = +1;
+    score.ties += 1;
   }
 
   localStorage.setItem("score", JSON.stringify(score));
@@ -88,5 +88,23 @@ function playGame(playerMove) {
 function updateScoreElement() {
   document.querySelector(
     ".js-score"
-  ).innerHTML = `Wins :${score.win} , Losses:${score.losses} , Ties: ${score.ties}`;
+  ).innerHTML = `Wins :${score.wins} , Losses:${score.losses} , Ties: ${score.ties}`;
+}
+
+let isAutoPlaying = false;
+let intervalId;
+
+function autoPlay() {
+  if (!isAutoPlaying) {
+    intervalId = setInterval(function () {
+      const playerMove = pickComputerMove();
+      playGame(playerMove);
+    }, 1000);
+    isAutoPlaying = true;
+    document.querySelector(".auto-play-button").innerHTML = "Stop Play";
+  } else {
+    clearInterval(intervalId);
+    isAutoPlaying = false;
+    document.querySelector(".auto-play-button").innerHTML = "Auto Play";
+  }
 }

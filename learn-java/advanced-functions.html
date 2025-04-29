@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Advanced Functons</title>
+  </head>
+  <body>
+    <script>
+      function greeting() {
+        console.log("hello");
+      }
+      greeting();
+
+      //function as values
+      const num = 2;
+      const function1 = function () {
+        //Anonymous function  = no name needed
+        console.log("hello2");
+      };
+      function1();
+
+      const object = {
+        num: 2,
+        fun: function () {
+          console.log("hello3");
+        },
+      };
+
+      object.fun();
+
+      function display(param) {
+        console.log(param);
+      }
+
+      display(2);
+
+      function run(param) {
+        param();
+      }
+
+      run(function () {
+        console.log("hello4"); // the function we pass are called call back function
+      });
+
+      //SetTimeOut (function, how long to wait before running the function (milisecond))
+
+      //Asynchronous code
+      setTimeout(function () {
+        console.log("timeOut");
+        console.log("timeOut2");
+      }, 3000); //waits for 3 sec before running the function
+
+      console.log("next line");
+
+      setInterval(function () {
+        //run function every 3 sec in future
+        console.log("interval");
+      }, 3000);
+
+      console.log("next line2");
+
+      //Another way to loop through arrar
+
+      ["make dinner", "wash dishes", "watch youtube"].forEach(function (
+        value,
+        index
+      ) {
+        if (value === "wash dishes") {
+          return; //continue
+        }
+        console.log(value);
+        console.log(index);
+      });
+    </script>
+  </body>
+</html>
+
+<!-- 
+synchronous code  - runs line by time
+Asynchronous code -  doesnot wait for the line of code
+-->

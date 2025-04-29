@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rock Paper Scissor</title>
+    <title>Rock Paper Scissor with Auto play</title>
     <link rel="stylesheet" href="styles/10-rock-paper.css" />
   </head>
   <body>
@@ -42,7 +42,7 @@
     <button
       class="reset-button"
       onclick="
-    score.win = 0;
+    score.wins = 0;
     score.losses = 0;
     score.ties = 0;
     localStorage.removeItem('score');
@@ -50,6 +50,13 @@
     "
     >
       Reset Score
+    </button>
+
+    <button class="auto-play-button"
+    onclick="
+    autoPlay();
+    ">
+      Auto Play
     </button>
 
     <script src="scripts/10-rock-paper.js"></script>
